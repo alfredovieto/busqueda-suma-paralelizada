@@ -1,8 +1,4 @@
-/*
- * Arquitectura de Computadoras - Búsqueda y Suma Paralelizada
- * Compilar (desde la raíz del proyecto):
- *   g++ -std=c++17 -Iinclude src/*.cpp -o build/proyecto
- */
+
 #include <iomanip>
 #include <iostream>
 #include <memory>
