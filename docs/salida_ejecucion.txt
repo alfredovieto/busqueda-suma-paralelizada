@@ -1,0 +1,60 @@
+=============================================================
+   BUSQUEDA Y SUMA PARALELIZADA - Arquitectura de Computadoras
+=============================================================
+
+Arreglo de entrada (100 enteros):
+ 122 328 515 975 525 663 881 976 106 906
+ 229 917 616 637 570 431 803 587 561 863
+ 749 796 787 503 770 792 601 452 246   3
+ 629  83 114 295 837 101 461  12 835 913
+ 702 503 696 322 216 407 258 357 952 366
+ 825 386 764 526 654  79 741 349  92 571
+ 551 300 295 469 145 898 661 721 734 592
+ 317  26 869 728 378 373 473 433  93 409
+ 913 600 568 511 889 120 436 519 822 769
+ 888 615 897 503 408 939 538 265 865 431
+
+-------------------------------------------------------------
+PARTE 1. SOLUCION SECUENCIAL (1 recorrido de 0 a 99)
+-------------------------------------------------------------
+   Suma total : 53917
+   Maximo     : 976
+   Minimo     : 3
+
+-------------------------------------------------------------
+PARTE 2. SIMULACION PARALELA (4 bloques de 25 elementos)
+-------------------------------------------------------------
+Bloque   Rango      Suma    Maximo   Minimo
+  1      0 - 24    15816      976      106
+  2     25 - 49    11153      952        3
+  3     50 - 74    12671      898       26
+  4     75 - 99    14277      939       93
+
+Resultado combinado:
+   Suma total : 53917
+   Maximo     : 976
+   Minimo     : 3
+
+-------------------------------------------------------------
+VERIFICACION
+-------------------------------------------------------------
+   Suma   : OK
+   Maximo : OK
+   Minimo : OK
+   >> Ambos metodos COINCIDEN.
+
+-------------------------------------------------------------
+COMPARACION SECUENCIAL vs PARALELO
+-------------------------------------------------------------
+   Pasos secuencial                  : 100
+   Pasos paralelo (4 nucleos reales) : 25 + 3 de combinacion = 28
+   Speedup teorico                   : 3.57x
+
+   Tiempo medido (promedio de 1000000 ejecuciones):
+      Secuencial          : 302.85 ns
+      Paralelo simulado   : 519.05 ns
+      Relacion par/sec    : 1.71
+
+   Nota: la version paralela es una SIMULACION; corre en un solo
+   nucleo, un bloque tras otro, y recorre cada bloque 3 veces.
+   La ventaja aparece cuando cada bloque usa un nucleo distinto.

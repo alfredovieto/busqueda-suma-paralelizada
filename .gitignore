@@ -1,0 +1,32 @@
+# Carpeta de compilación
+build/
+out/
+cmake-build-*/
+
+# Binarios y objetos
+*.exe
+*.obj
+*.o
+*.out
+*.pdb
+*.ilk
+*.idb
+*.lib
+*.a
+
+# Visual Studio / VS Code
+.vs/
+*.vcxproj.user
+*.suo
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
